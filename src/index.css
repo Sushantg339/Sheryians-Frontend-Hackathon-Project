@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@font-face{
+    font-family: china;
+    src: url('/fonts/NeueMachina-Regular_DQCmjH1st.ttf');
+}
+
+@font-face {
+    font-family: dott;
+    src: url('/fonts/dott.ttf');
+}
+
+*{
+    font-family: china;
+}
+
