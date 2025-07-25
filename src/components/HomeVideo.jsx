@@ -2,6 +2,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import React, { useRef } from 'react';
+import video from "/videos/website video.mp4"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +30,7 @@ const HomeVideo = () => {
         loop
         muted
         className="h-[70vh] md:h-[80vh] w-full object-cover object-top rounded-xl shadow-lg"
-        src="/videos/website video.mp4"
+        src={video}
       ></video>
     </div>
   );
