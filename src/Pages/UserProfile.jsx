@@ -20,7 +20,7 @@ const UserProfile = () => {
   }
 
   return (
-    <div className="min-h-[86.5vh] flex items-center justify-center bg-zinc-100 px-4">
+    <div className="min-h-[86.5vh] flex items-center justify-center bg-zinc-300 px-4">
       <div className="w-full max-w-xl bg-white rounded-2xl shadow-2xl p-10 space-y-6">
         <h2 className="text-3xl font-bold text-center text-zinc-800">Your Profile</h2>
 

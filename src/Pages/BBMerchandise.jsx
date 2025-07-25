@@ -4,19 +4,14 @@ import ProductCard from "../components/ProductCard";
 import BlurText from "../React bits components/BlurText";
 import { productContext } from "../Context/ProductContext";
 
-const categories = [
-  "All",
-  "T-shirts",
-  "Hoodies",
-  "Funky Mugs",
-];
+const categories = ["All", "T-shirts", "Hoodies", "Funky Mugs"];
 
 const BBMerchandise = () => {
   const { products } = useContext(productContext);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
 
-  const PRODUCTS_PER_PAGE = 9;
+  const PRODUCTS_PER_PAGE = 8;
 
   const filteredProducts =
     selectedCategory === "All"
@@ -31,47 +26,48 @@ const BBMerchandise = () => {
   const endIndex = startIndex + PRODUCTS_PER_PAGE;
   const currentProducts = filteredProducts.slice(startIndex, endIndex);
 
+
   const handleCategoryChange = (cat) => {
     setSelectedCategory(cat);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
   return (
     <div className="min-h-screen px-4 md:px-10 py-10">
       <div className="flex justify-center w-full text-center ">
         <BlurText
-            text="The Official BB Merchandise"
-            delay={150}
-            animateBy="words"
-            direction="top"
-            className="text-6xl mb-8"
+          text="The Official BB Merchandise"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className="md:text-6xl text-3xl mb-5"
         />
       </div>
 
-      <div className="flex gap-15 mt-10">
-        <aside className="lg:w-1/5  rounded-lg py-10 bg-[#fafafa] sticky top-24 h-fit mb-10 lg:mb-0 px-4">
-          <h2 className="text-2xl font-semibold mb-10 text-zinc-800">
+      <div className="flex flex-col gap-15 mt-5 ">
+        <div className="w-full flex flex-col items-center mt-6">
+          <h2 className="text-2xl font-semibold text-zinc-800 mb-4">
             Categories
           </h2>
-          <ul className="space-y-2">
+          <ul className="flex flex-wrap justify-center gap-6 sm:gap-10 text-lg">
             {categories.map((cat, index) => (
               <li
                 key={index}
                 onClick={() => handleCategoryChange(cat)}
-                className={`text-gray-600 hover:text-black transition cursor-pointer hover:translate-x-5 duration-300 mb-5 ${
+                className={`cursor-pointer transition duration-300 hover:text-black ${
                   selectedCategory === cat
-                    ? "font-bold text-black translate-x-5"
-                    : ""
+                    ? "font-bold text-black underline underline-offset-4"
+                    : "text-gray-600"
                 }`}
               >
-                • {cat}
+                {cat}
               </li>
             ))}
           </ul>
-        </aside>
+        </div>
 
-        <div className="lg:w-4/5 w-4/ flex flex-col items-center gap-6">
-          <div className="w-full flex flex-wrap justify-center gap-3">
+        <div className="lg:w-full  flex flex-col items-center gap-6">
+          <div  className="w-full flex flex-wrap justify-center gap-3">
             {currentProducts.length > 0 ? (
               currentProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
@@ -83,7 +79,6 @@ const BBMerchandise = () => {
             )}
           </div>
 
-          
           {totalPages > 1 && (
             <div className="flex gap-2 mt-6">
               <button

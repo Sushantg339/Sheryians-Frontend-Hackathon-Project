@@ -25,7 +25,7 @@ const HomeUpSection = () => {
   });
 
   return (
-    <section className="w-full flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-5 md:px-14 mt-5 md:mt-10 overflow-hidden">
+    <section className="w-full xl:min-h-[60vh] flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-5 md:px-14 mt-5 md:mt-10 overflow-hidden">
       <div className="w-full md:w-[65%] text-center md:text-left">
         <DecryptedText
           text={`The Official Bhuvan Bam Merchandise`}
@@ -52,13 +52,13 @@ const HomeUpSection = () => {
         </div>
       </div>
 
-      <div ref={homeImgRef} className="w-full md:w-[45%] flex justify-center">
+      <div ref={homeImgRef} className="w-full md:w-[50%] xl:w-[60%] flex justify-center">
         <TiltedCard
   imageSrc="/images/bhvanhome.jpg"
   altText="Bhuvan Bam. The Youth Icon"
   captionText="Bhuvan Bam - BB ki Vines"
-  containerHeight="50%"
-  containerWidth="40%"
+  containerHeight="70%"
+  containerWidth="60%"
   imageHeight="400px"
   imageWidth="300px"
   rotateAmplitude={12}

@@ -10,7 +10,7 @@ const App = () => {
   const shouldHideFooter = hideFooterRoutes.includes(location.pathname);
 
   return (
-    <div id="main" className="bg-zinc-300 h-screen overflow-x-hidden overflow-auto relative">
+    <div id="main" className="bg-zinc-300 h-screen overflow-x-hidden overflow-y-scroll relative">
       <Navbar />
       <MainRoutes />
       {!shouldHideFooter && <Footer />}
