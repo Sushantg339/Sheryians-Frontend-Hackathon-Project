@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import React, { useRef } from 'react';
-import videoUrl from "@/public/videos/a.mp4";
+import videoUrl from "/public/videos/a.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
