@@ -2,7 +2,6 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import React, { useRef } from 'react';
-import videoUrl from "../../public/videos/a.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +20,9 @@ const HomeVideo = () => {
       },
     });
   }, homeVideoRef);
+
+  // Using public folder path directly
+  const videoUrl = "/videos/a.mp4";
 
   return (
     <div className="w-full px-2 md:px-5 lg:px-10 mt-5 mb-5">
